@@ -84,20 +84,20 @@ const menuIcon = document.getElementById("menu-icon");
 const navLinks = document.getElementById("nav-links");
 
 // toggle open/close on hamburger click
-menuIcon.addEventListener("click", e => {
+menuIcon.addEventListener("click", (e) => {
   navLinks.classList.toggle("show");
-  e.stopPropagation();            // don’t let this click bubble to document
+  e.stopPropagation(); // don’t let this click bubble to document
 });
 
 // close when clicking any nav link
-navLinks.querySelectorAll("a").forEach(a =>
+navLinks.querySelectorAll("a").forEach((a) =>
   a.addEventListener("click", () => {
     navLinks.classList.remove("show");
   })
 );
 
 // close when clicking outside the menu
-document.addEventListener("click", e => {
+document.addEventListener("click", (e) => {
   // if menu is open AND click target is not inside navLinks or the menuIcon
   if (
     navLinks.classList.contains("show") &&
@@ -112,20 +112,20 @@ const menuIcon2 = document.getElementById("menu-icon2");
 const navLinks2 = document.getElementById("nav-links");
 
 // toggle open/close on hamburger click
-menuIcon2.addEventListener("click", e => {
+menuIcon2.addEventListener("click", (e) => {
   navLinks2.classList.toggle("show");
-  e.stopPropagation();            // don’t let this click bubble to document
+  e.stopPropagation(); // don’t let this click bubble to document
 });
 
 // close when clicking any nav link
-navLinks2.querySelectorAll("a").forEach(a =>
+navLinks2.querySelectorAll("a").forEach((a) =>
   a.addEventListener("click", () => {
     navLinks2.classList.remove("show");
   })
 );
 
 // close when clicking outside the menu
-document.addEventListener("click", e => {
+document.addEventListener("click", (e) => {
   // if menu is open AND click target is not inside navLinks or the menuIcon
   if (
     navLinks2.classList.contains("show") &&
@@ -135,10 +135,6 @@ document.addEventListener("click", e => {
     navLinks2.classList.remove("show");
   }
 });
-
-
-
-
 
 document
   .querySelector(".hero-section")
@@ -188,8 +184,6 @@ window.addEventListener("scroll", () => {
   }
 });
 
-
-
 const sections = document.querySelectorAll("section");
 const navItems = document.querySelectorAll(".side-nav li");
 
@@ -212,8 +206,6 @@ window.addEventListener("scroll", () => {
     }
   });
 });
-
-
 
 function revealAboutme() {
   const skills = document.querySelectorAll(".aboutme");
@@ -239,7 +231,6 @@ window.addEventListener("scroll", () => {
     sideNav.classList.remove("active-about");
   }
 });
-
 
 // Function to reveal portfolio items with 'visible' class
 function revealPortfolio() {
@@ -274,21 +265,19 @@ window.addEventListener("scroll", () => {
   }
 });
 
-
-
-
-
 const projectDetails = {
   project1: {
     title: "Project One",
     image: "images/project1.jpg",
-    description: "This is a detailed description of project one. You can include tools used, goals, and outcome."
+    description:
+      "This is a detailed description of project one. You can include tools used, goals, and outcome.",
   },
   project2: {
     title: "Project Two",
     image: "images/project2.jpg",
-    description: "This is a detailed description of project two. Talk about your contribution and tech stack."
-  }
+    description:
+      "This is a detailed description of project two. Talk about your contribution and tech stack.",
+  },
 };
 
 function openModal(projectKey) {
@@ -304,108 +293,91 @@ function closeModal() {
   document.getElementById("portfolioModal").style.display = "none";
 }
 
-
-
-
-
-
 function filterProjects(category) {
-  const allItems = document.querySelectorAll('.portfolio-item');
-  const buttons = document.querySelectorAll('.filter-btn');
+  const allItems = document.querySelectorAll(".portfolio-item");
+  const buttons = document.querySelectorAll(".filter-btn");
 
   // Toggle button active style
-  buttons.forEach(btn => btn.classList.remove('active'));
-  event.target.classList.add('active');
+  buttons.forEach((btn) => btn.classList.remove("active"));
+  event.target.classList.add("active");
 
   // Filter logic
-  allItems.forEach(item => {
-    if (category === 'all') {
-      item.style.display = 'block';
+  allItems.forEach((item) => {
+    if (category === "all") {
+      item.style.display = "block";
     } else if (item.classList.contains(category)) {
-      item.style.display = 'block';
+      item.style.display = "block";
     } else {
-      item.style.display = 'none';
+      item.style.display = "none";
     }
   });
 }
 
+window.addEventListener("scroll", () => {
+  const servicesSection = document.querySelector("#services");
+  const sideNav = document.querySelector(".side-nav");
 
+  const sectionTop = servicesSection.getBoundingClientRect().top;
+  const sectionHeight = servicesSection.offsetHeight;
 
+  if (sectionTop <= window.innerHeight / 2 && sectionTop + sectionHeight > 0) {
+    sideNav.classList.add("white-background");
+  } else {
+    sideNav.classList.remove("white-background");
+  }
+});
 
+window.addEventListener("scroll", () => {
+  const sideNav = document.querySelector(".side-nav");
+  const servicesSection = document.querySelector("#services");
+  const contactSection = document.querySelector("#contact");
 
+  const checkInView = (section) => {
+    const sectionTop = section.getBoundingClientRect().top;
+    const sectionHeight = section.offsetHeight;
+    return (
+      sectionTop <= window.innerHeight / 2 && sectionTop + sectionHeight > 0
+    );
+  };
 
+  if (checkInView(servicesSection) || checkInView(contactSection)) {
+    sideNav.classList.add("white-background");
+  } else {
+    sideNav.classList.remove("white-background");
+  }
+});
 
-  window.addEventListener("scroll", () => {
-    const servicesSection = document.querySelector("#services");
-    const sideNav = document.querySelector(".side-nav");
+let current = 1;
+setInterval(() => {
+  document.getElementById(`slide-${current}`).checked = false;
+  current = (current % 4) + 1;
+  document.getElementById(`slide-${current}`).checked = true;
+}, 5000); // 5 seconds
 
-    const sectionTop = servicesSection.getBoundingClientRect().top;
-    const sectionHeight = servicesSection.offsetHeight;
+document.querySelector(".hire-me").addEventListener("click", function () {
+  document.querySelector("#contact").scrollIntoView({ behavior: "smooth" });
+});
 
-    if (sectionTop <= window.innerHeight / 2 && sectionTop + sectionHeight > 0) {
-      sideNav.classList.add("white-background");
-    } else {
-      sideNav.classList.remove("white-background");
-    }
-  });
-
-
-
-   window.addEventListener("scroll", () => {
-    const sideNav = document.querySelector(".side-nav");
-    const servicesSection = document.querySelector("#services");
-    const contactSection = document.querySelector("#contact");
-
-    const checkInView = (section) => {
-      const sectionTop = section.getBoundingClientRect().top;
-      const sectionHeight = section.offsetHeight;
-      return sectionTop <= window.innerHeight / 2 && sectionTop + sectionHeight > 0;
-    };
-
-    if (checkInView(servicesSection) || checkInView(contactSection)) {
-      sideNav.classList.add("white-background");
-    } else {
-      sideNav.classList.remove("white-background");
-    }
-  });
-
-
-
-
-  let current = 1;
-  setInterval(() => {
-    document.getElementById(`slide-${current}`).checked = false;
-    current = current % 4 + 1;
-    document.getElementById(`slide-${current}`).checked = true;
-  }, 5000); // 5 seconds
-
-
-
-document.querySelector('.hire-me').addEventListener('click', function() {
-    alert("Button clicked!"); // or redirect, open modal, etc.
-  });
-
+document.querySelector(".works").addEventListener("click", function () {
+  document.querySelector("#portfolio").scrollIntoView({ behavior: "smooth" });
+});
 
 function toggleDarkMode() {
-      document.body.classList.toggle("dark-mode");
-    }
+  document.body.classList.toggle("dark-mode");
+}
 
- 
-  const backToTop = document.getElementById("backToTop");
+const backToTop = document.getElementById("backToTop");
 
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 400) {
-      backToTop.style.opacity = "1";
-      backToTop.style.pointerEvents = "auto";
-    } else {
-      backToTop.style.opacity = "0";
-      backToTop.style.pointerEvents = "none";
-    }
-  });
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 400) {
+    backToTop.style.opacity = "1";
+    backToTop.style.pointerEvents = "auto";
+  } else {
+    backToTop.style.opacity = "0";
+    backToTop.style.pointerEvents = "none";
+  }
+});
 
-  backToTop.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-
-
-
+backToTop.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
