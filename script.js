@@ -388,28 +388,27 @@ backToTop.addEventListener("click", () => {
 
 
 
+src="https://cdn.emailjs.com/dist/email.min.js"
 
+ (function () {
+  emailjs.init("ZELsn1nASVKwOU-cx"); // Use your actual public key here
+})();
 
-  (function () {
-    emailjs.init("ZELsn1nASVKwOU-cx"); // replace with your actual public key
-  })();
+document.getElementById("contact-form").addEventListener("submit", function (e) {
+  e.preventDefault();
 
-  document.getElementById("contact-form").addEventListener("submit", function (e) {
-    e.preventDefault();
+  // Set the time field value
+  this.time.value = new Date().toLocaleString();
 
-    // Set the time field value
-    this.time.value = new Date().toLocaleString();
-
-    // Send the form
-    emailjs.sendForm("service_mabgzeu", "template_bl3z7zo", this).then(
-      function () {
-        alert("Message sent successfully!");
-        document.getElementById("contact-form").reset();
-      },
-      function (error) {
-        alert("Failed to send message. Please try again.");
-        console.error("EmailJS Error:", error);
-      }
-    );
-  });
-
+  // Send the form
+  emailjs.sendForm("service_mabgzeu", "template_bl3z7zo", this)
+    .then(function () {
+      alert("Message sent successfully!");
+      document.getElementById("contact-form").reset();
+    }, function (error) {
+      alert("Failed to send message. Please try again.");
+      console.error("EmailJS Error:", error);
+      console.log("Error status:", error.status);
+      console.log("Error text:", error.text);
+    });
+});
