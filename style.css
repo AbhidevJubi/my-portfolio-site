@@ -737,3 +737,8 @@ top: 30px;
   font-weight: 900;
   color: #f44336;
 }
+
+/* Basic styling for the custom cursor */
+body {
+  cursor: url('pixel-cursor.svg') 12 12, auto;
+}
