@@ -382,32 +382,39 @@ backToTop.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-window.addEventListener('DOMContentLoaded', function() {
-  console.log("DOM fully loaded, initializing EmailJS");
 
+
+
+
+
+
+
+
+
+import emailjs from 'https://cdn.emailjs.com/dist/email.min.js';
+
+window.addEventListener('DOMContentLoaded', () => {
   emailjs.init("ZELsn1nASVKwOU-cx");
 
   const form = document.getElementById("contact-form");
   if (!form) {
-    console.error("Form with id 'contact-form' not found!");
+    console.error("Form not found");
     return;
   }
 
-  form.addEventListener("submit", function (e) {
+  form.addEventListener("submit", (e) => {
     e.preventDefault();
-    console.log("Form submit event triggered");
 
-    this.time.value = new Date().toLocaleString();
-    console.log("Time field set to:", this.time.value);
+    form.time.value = new Date().toLocaleString();
 
-    emailjs.sendForm("service_mabgzeu", "template_bl3z7zo", this)
-      .then(function () {
-        console.log("EmailJS sendForm succeeded");
+    emailjs.sendForm("service_mabgzeu", "template_bl3z7zo", form)
+      .then(() => {
         alert("Message sent successfully!");
         form.reset();
-      }, function (error) {
-        console.error("EmailJS sendForm failed", error);
+      })
+      .catch((error) => {
         alert("Failed to send message. Please try again.");
+        console.error("EmailJS Error:", error);
       });
   });
 });
