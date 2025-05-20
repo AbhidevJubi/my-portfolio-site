@@ -403,12 +403,29 @@ window.addEventListener('DOMContentLoaded', () => {
 
     emailjs.sendForm("service_mabgzeu", "template_bl3z7zo", form)
       .then(() => {
-        alert("Message sent successfully!");
+        showCustomAlert("Message sent successfully!", "success");
         form.reset();
       })
       .catch((error) => {
-        alert("Failed to send message. Please try again.");
+        showCustomAlert("Failed to send message. Please try again.", "error");
         console.error("EmailJS Error:", error);
       });
   });
 });
+
+
+function showCustomAlert(message, type = "success") {
+  const alertBox = document.getElementById("alert-box");
+  const icon = alertBox.querySelector(".icon");
+  const messageText = alertBox.querySelector(".message-text");
+
+  alertBox.className = `custom-alert ${type}`;
+  messageText.textContent = message;
+
+  alertBox.style.display = "flex";
+
+  // Auto-hide after 4 seconds
+  setTimeout(() => {
+    alertBox.style.display = "none";
+  }, 4000);
+}

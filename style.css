@@ -689,3 +689,51 @@ top: 30px;
 
 
 
+.custom-alert {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  min-width: 250px;
+  max-width: 90vw;
+  padding: 16px 20px;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: 500;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 9999;
+  transition: all 0.3s ease;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.custom-alert.success {
+  background-color: #e6f9ec;
+  color: #2e7d32;
+  border: 2px solid #4caf50;
+}
+
+.custom-alert.error {
+  background-color: #fdecea;
+  color: #c62828;
+  border: 2px solid #f44336;
+}
+
+.custom-alert .icon {
+  font-size: 20px;
+}
+
+.custom-alert.success .icon::before {
+  content: "\f00c"; /* Font Awesome check */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  color: #4caf50;
+}
+
+.custom-alert.error .icon::before {
+  content: "\f00d"; /* Font Awesome times */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  color: #f44336;
+}
