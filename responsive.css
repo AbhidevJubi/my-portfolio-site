@@ -16,6 +16,7 @@
 }
 
 .side-nav {
+  display: none;
   position: fixed;
   margin-top: 170px;
   width: 130px;
