@@ -382,33 +382,31 @@ backToTop.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
+// Wait until the DOM is fully loaded before running the script
+window.addEventListener("DOMContentLoaded", function () {
+  // Initialize EmailJS with your public key
+  emailjs.init("ZELsn1nASVKwOU-cx");
 
+  // Get the form element
+  const form = document.getElementById("contact-form");
 
+  // Attach submit event listener to the form
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent default form submission (page reload)
 
+    // Set the hidden time field value to current date and time
+    this.time.value = new Date().toLocaleString();
 
-
-
-src="https://cdn.emailjs.com/dist/email.min.js"
-
- (function () {
-  emailjs.init("ZELsn1nASVKwOU-cx"); // Use your actual public key here
-})();
-
-document.getElementById("contact-form").addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  // Set the time field value
-  this.time.value = new Date().toLocaleString();
-
-  // Send the form
-  emailjs.sendForm("service_mabgzeu", "template_bl3z7zo", this)
-    .then(function () {
-      alert("Message sent successfully!");
-      document.getElementById("contact-form").reset();
-    }, function (error) {
-      alert("Failed to send message. Please try again.");
-      console.error("EmailJS Error:", error);
-      console.log("Error status:", error.status);
-      console.log("Error text:", error.text);
-    });
+    // Send the form data using EmailJS
+    emailjs.sendForm("service_mabgzeu", "template_bl3z7zo", this).then(
+      function () {
+        alert("Message sent successfully!");
+        form.reset(); // Clear form fields after successful send
+      },
+      function (error) {
+        alert("Failed to send message. Please try again.");
+        console.error("EmailJS Error:", error);
+      }
+    );
+  });
 });
