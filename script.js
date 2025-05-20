@@ -397,6 +397,8 @@ window.addEventListener('DOMContentLoaded', () => {
   emailjs.init("ZELsn1nASVKwOU-cx");
 
   const form = document.getElementById("contact-form");
+  const alertContainer = document.getElementById("alert-container");
+
   if (!form) {
     console.error("Form not found");
     return;
@@ -409,12 +411,28 @@ window.addEventListener('DOMContentLoaded', () => {
 
     emailjs.sendForm("service_mabgzeu", "template_bl3z7zo", form)
       .then(() => {
-        alert("Message sent successfully!");
+        showAlert("Message sent successfully!", "success");
         form.reset();
       })
       .catch((error) => {
-        alert("Failed to send message. Please try again.");
+        showAlert("Failed to send message. Please try again.", "error");
         console.error("EmailJS Error:", error);
       });
   });
+
+  function showAlert(message, type) {
+    const alertBox = document.createElement("div");
+    const icon = type === "success"
+      ? '<i class="fas fa-check-circle"></i>'
+      : '<i class="fas fa-times-circle"></i>';
+
+    alertBox.className = `custom-alert alert-${type}`;
+    alertBox.innerHTML = `${icon} ${message}`;
+
+    alertContainer.appendChild(alertBox);
+
+    setTimeout(() => {
+      alertBox.remove();
+    }, 5000);
+  }
 });
