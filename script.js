@@ -382,31 +382,32 @@ backToTop.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-// Wait until the DOM is fully loaded before running the script
-window.addEventListener("DOMContentLoaded", function () {
-  // Initialize EmailJS with your public key
+window.addEventListener('DOMContentLoaded', function() {
+  console.log("DOM fully loaded, initializing EmailJS");
+
   emailjs.init("ZELsn1nASVKwOU-cx");
 
-  // Get the form element
   const form = document.getElementById("contact-form");
+  if (!form) {
+    console.error("Form with id 'contact-form' not found!");
+    return;
+  }
 
-  // Attach submit event listener to the form
   form.addEventListener("submit", function (e) {
-    e.preventDefault(); // Prevent default form submission (page reload)
+    e.preventDefault();
+    console.log("Form submit event triggered");
 
-    // Set the hidden time field value to current date and time
     this.time.value = new Date().toLocaleString();
+    console.log("Time field set to:", this.time.value);
 
-    // Send the form data using EmailJS
-    emailjs.sendForm("service_mabgzeu", "template_bl3z7zo", this).then(
-      function () {
+    emailjs.sendForm("service_mabgzeu", "template_bl3z7zo", this)
+      .then(function () {
+        console.log("EmailJS sendForm succeeded");
         alert("Message sent successfully!");
-        form.reset(); // Clear form fields after successful send
-      },
-      function (error) {
+        form.reset();
+      }, function (error) {
+        console.error("EmailJS sendForm failed", error);
         alert("Failed to send message. Please try again.");
-        console.error("EmailJS Error:", error);
-      }
-    );
+      });
   });
 });
