@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abhidev Portfolio</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="responsive.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="folder.css" />
+    <link rel="stylesheet" href="dark.CSS" />
+    <!-- Place this in the <head> section -->
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+
+    <meta
+      name="description"
+      content="Abhidev Jubi's personal portfolio - Video Editing, UI/UX Design, Graphic Design, and Development Projects."
+    />
+    <meta
+      name="keywords"
+      content="Abhidev Jubi, Portfolio, Video Editing, Developer, UI/UX, Web Design, Graphic Design"
+    />
+    <meta name="author" content="Abhidev Jubi" />
+  </head>
+  <body>
+    <header id="navbar">
+      <div class="logo" id="logo2">AJ</div>
+      <nav class="nav-links" id="nav-links">
+        <a href="#menu-icon2">Home</a>
+    <a href="#hire-me">About</a>
+    <a href="#skills">Skills</a>
+     <a href="#web-dev">Portfolio</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+       <a href="#resume">Resume</a>
+       <div class="social-icons2">
+        <a href="#" target="_blank"><i class="fab fa-github icon2"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-instagram icon2"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-twitter icon2"></i></a>
+      </div>
+      
+      </nav>
+
+
+      
+      <div class="menu-icon" id="menu-icon">&#9776;</div>
+    </header>
+
+    <!-- Logo -->
+    <div class="logo" id="logo">AJ</div>
+
+    <div class="menu-icon2" id="menu-icon2" >&#9776;</div>
+
+    <!-- Social Icons (just placeholders for now) -->
+    <div class="social-icons">
+      <a href="#" target="_blank"><i class="fab fa-github icon"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-instagram icon"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-twitter icon"></i></a>
+    </div>
+
+    <!-- Side Navigation -->
+    <nav class="side-nav">
+      <ul>
+        <li data-section="home"><a href="#home">Home</a></li>
+        <li data-section="about"><a href="#about">About</a></li>
+        <li data-section="skills"><a href="#skills">Skills</a></li>
+        <li data-section="portfolio"><a href="#portfolio">Portfolio</a></li>
+        <li data-section="services"><a href="#services">Services</a></li>
+        <li data-section="contact"><a href="#contact">Contact</a></li>
+        <li data-section="resume"><a href="#resume">Resume</a></li>
+      </ul>
+
+      <!-- <button class="toggle-mode" onclick="toggleDarkMode()">Dark Mode</button> -->
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="hey"><h2 class="hey-text">Hey! it’s</h2></div>
+      <div class="name"><h3 class="name-text">Abhidev Jubi</h3></div>
+
+      <div class="folder">
+        <!-- <div class="tab"></div> -->
+
+        <div class="body">
+          <div class="css-slider">
+            <input id="slide-1" type="radio" name="slides" checked hidden />
+            <input id="slide-2" type="radio" name="slides" hidden />
+            <input id="slide-3" type="radio" name="slides" hidden />
+            <input id="slide-4" type="radio" name="slides" hidden />
+
+            <section class="slide slide-one">
+              <h1>I love editing motion-style videos and adding effects.</h1>
+              <nav>
+                <label for="slide-4" class="prev">&#10094;</label>
+                <label for="slide-2" class="next">&#10095;</label>
+              </nav>
+            </section>
+
+            <section class="slide slide-two">
+              <h1>
+                Experienced with creating visuals using Photoshop and
+                Illustrator.
+              </h1>
+              <nav>
+                <label for="slide-1" class="prev">&#10094;</label>
+                <label for="slide-3" class="next">&#10095;</label>
+              </nav>
+            </section>
+
+            <section class="slide slide-three">
+              <h1>
+                I design user-centric interfaces with modern design principles.
+              </h1>
+              <nav>
+                <label for="slide-2" class="prev">&#10094;</label>
+                <label for="slide-4" class="next">&#10095;</label>
+              </nav>
+            </section>
+
+            <section class="slide slide-four">
+              <h1>
+                Front-end and back-end web development using HTML, CSS, JS, and
+                Flask
+              </h1>
+              <nav>
+                <label for="slide-3" class="prev">&#10094;</label>
+                <label for="slide-1" class="next">&#10095;</label>
+              </nav>
+            </section>
+
+            <header>
+              <label for="slide-1" class="dot"></label>
+              <label for="slide-2" class="dot"></label>
+              <label for="slide-3" class="dot"></label>
+              <label for="slide-4" class="dot"></label>
+            </header>
+          </div>
+
+          <div id="availability-banner" class="availability">
+            I am available for work
+          </div>
+          <div class="green-circle"></div>
+        </div>
+
+        <div class="bg">
+          <button class="hire-me" id="hire-me"><span>Hire Me</span></button>
+          <button class="works"><span>My Works</span></button>
+        </div>
+      </div>
+
+      <video class="bg-video" autoplay muted loop playsinline>
+        <source src="Bg.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <!-- 
+  <div class="hero-content">
+    <h1>Welcome to My Portfolio</h1>
+    <p>I’m Abhidev — Developer, Designer, and Editor</p>
+    <a href="#portfolio" class="cta-button">View My Work</a>
+  </div> -->
+    </section>
+
+    <section id="about" class="about-section">
+      <div class="aboutme">
+        <h2>About Me</h2>
+        <br />
+        <p>
+          Hi! I’m Abhidev Jubi, a passionate and driven Computer Science
+          Engineering student with a deep interest in Artificial Intelligence,
+          Machine Learning, Full Stack Development, and Cloud Computing. I am
+          constantly exploring new ways to leverage technology to solve
+          real-world problems and enhance user experiences. Currently, I’m
+          focused on advancing my skills in AI-powered applications and software
+          development. I am also honing my skills in music production and video
+          editing, using those creative outlets to enrich my personal and
+          professional growth. My goal is to bridge the gap between technology
+          and innovation, creating intuitive solutions that not only meet
+          current needs but also anticipate future challenges. I’m always
+          looking for opportunities to collaborate, learn, and grow—whether it’s
+          building projects, developing software, or contributing to the tech
+          community. Feel free to explore my portfolio, check out my work, and
+          get in touch with me if you want to collaborate or chat about tech,
+          coding, or anything in between!
+        </p>
+      </div>
+    </section>
+
+    <!-- Skills Section (Place this after Hero) -->
+    <section id="skills" class="skills-section">
+      <div class="skill reveal">
+        <h2>My Skills</h2>
+        <br />
+        <h3>Video Editing</h3>
+        <p>I love editing motion-style videos and adding effects.</p>
+      </div>
+      <br>
+      <br>
+      <div class="skill reveal">
+        <h3>Graphic Designing</h3>
+        <p>
+          Experienced with creating visuals using Photoshop and Illustrator.
+        </p>
+      </div>
+       <br>
+      <br>
+      <div class="skill reveal">
+        <h3>UI/UX Design</h3>
+        <p>I design user-centric interfaces with modern design principles.</p>
+      </div>
+      <br>
+      <br>
+      <div class="skill reveal" id="web-dev">
+        <h3>Web Development</h3>
+        <p>
+          Front-end and back-end web development using HTML, CSS, JS, and Flask.
+        </p>
+      </div>
+    </section>
+
+    <!-- Filter Buttons -->
+    <!-- <h2 class="my-portifolio">My Portfolio</h2> -->
+     <section id="portfolio">
+    <div class="portfolio-filters" id="portfolio">
+      <h2 class="my-portfolio">My Portfolio</h2>
+      <button class="filter-btn active" onclick="filterProjects('all')">
+        All
+      </button>
+      <button class="filter-btn" onclick="filterProjects('video')">
+        Video Editing
+      </button>
+      <button class="filter-btn" onclick="filterProjects('graphic')">
+        Graphic Design
+      </button>
+      <button class="filter-btn" onclick="filterProjects('uiux')">
+        UI/UX Design
+      </button>
+      <button class="filter-btn" onclick="filterProjects('dev')">
+        Developer Projects
+      </button>
+    </div>
+
+    <!-- Portfolio Grid -->
+    <div class="portfolio-grid">
+      <div class="portfolio-item video">
+        <img src="images/video1.jpg" alt="Video Project" />
+        <h3>Video Editing Project</h3>
+      </div>
+
+      <div class="portfolio-item graphic">
+        <img src="images/graphic1.jpg" alt="Graphic Design" />
+        <h3>Graphic Design</h3>
+      </div>
+
+      <div class="portfolio-item uiux">
+        <img src="images/uiux1.jpg" alt="UI/UX Project" />
+        <h3>UI/UX Design</h3>
+      </div>
+
+      <div class="portfolio-item dev">
+        <img src="images/dev1.jpg" alt="Developer Project" />
+        <h3>Developer Project</h3>
+      </div>
+
+      <!-- Developer Projects with Modal -->
+      <div class="portfolio-item dev" onclick="openModal('project1')">
+        <img src="images/project1.jpeg" alt="Project 1" />
+        <div class="overlay">
+          <h3>Project 1</h3>
+          <p>Brief description</p>
+        </div>
+      </div>
+
+      <div class="portfolio-item dev" onclick="openModal('project2')">
+        <img src="images/project2.jpeg" alt="Project 2" />
+        <div class="overlay">
+          <h3>Project 2</h3>
+          <p>Brief description</p>
+        </div>
+      </div>
+    </div>
+
+    </section>
+
+    <section id="services" class="services-section">
+      <h2>My Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <i class="fas fa-video"></i>
+          <h3>Video Editing</h3>
+          <p>Professional editing for YouTube, reels, and promos.</p>
+        </div>
+
+        <div class="service-card">
+          <i class="fas fa-paint-brush"></i>
+          <h3>Graphic Design</h3>
+          <p>Logos, posters, social media creatives, and branding.</p>
+        </div>
+
+        <div class="service-card">
+          <i class="fas fa-pencil-ruler"></i>
+          <h3>UI/UX Design</h3>
+          <p>Designing intuitive and modern user interfaces.</p>
+        </div>
+
+        <div class="service-card">
+          <i class="fas fa-code"></i>
+          <h3>Web Development</h3>
+          <p>Responsive websites with clean frontend & backend code.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <h2>Contact Me</h2>
+      <p>Have a project or idea? Let's talk.</p>
+
+      <div class="contact-container">
+        <form class="contact-form">
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+          <textarea rows="5" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+        <br />
+
+        <div class="contact-info">
+          <p><strong>Email:</strong> yourmail@example.com</p>
+          <p><strong>Phone:</strong> +91 12345 67890</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-behance"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="resume" class="resume-section">
+      <h2>Download My Resume</h2>
+      <p>You can download a copy of my resume below:</p>
+      <a href="resume.pdf" download class="resume-btn">Download Resume</a>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-column">
+          <h3>About Me</h3>
+          <p>
+            I’m a creative designer & developer passionate about building
+            beautiful websites and apps.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3>Contact</h3>
+          <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
+          <p>Phone: <a href="tel:+919999999999">+91 99999 99999</a></p>
+          <div class="social-icons">
+            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Abhidev Jubi. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Hover Info Box -->
+    <div class="hover-info" id="hoverInfo">
+      <h2 id="hoverTitle"></h2>
+      <p id="hoverDesc"></p>
+    </div>
+
+    <div id="portfolioModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 id="modalTitle">Project Title</h2>
+        <img id="modalImage" src="" alt="Project Image" />
+        <p id="modalDescription">Project description goes here...</p>
+      </div>
+    </div>
+
+    <button id="backToTop" title="Go to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+    <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script> -->
+    <script src="script.js"></script>
+  </body>
+</html>

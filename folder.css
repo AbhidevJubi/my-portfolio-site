@@ -1,0 +1,285 @@
+@font-face {
+  font-family: 'MyFont';
+  src: url('Roobert-SemiBold.otf') format('truetype');
+  /* You can add woff, woff2 for more browser support */
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+.folder {
+  width: 360px;
+  height: 200px;
+  position: relative;
+  margin: 50px auto;
+}
+
+.tb {
+  width: 60px;
+  height: 30px;
+  background: #f0c14b;
+  border-radius: 8px 8px 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+  border: 1px solid #d2a948;
+}
+
+.body {
+  
+  width: 500px;
+  height: 340px;
+  background: #212121;
+  border-radius: 64px 64px 64px 64px;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.15);
+  border: 1px solid #d2a948;
+  position: absolute;
+  bottom: 0;
+  right: 100px;
+  top: 130px;
+  z-index: 2;
+}
+
+
+.bg {
+  width: 560px;
+  height: 380px;
+  background: #dbdbdb;
+  border-radius: 64px 64px 64px 64px;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.15);
+
+  position: absolute;
+  bottom: 0;
+  right: 40px;
+  top: 170px;
+  z-index: 1;
+}
+
+.hey  {
+    position: absolute;
+    font-family: serif;
+    font-weight: bold;
+    color: #c2c2c2;
+    font-size: 22px;
+    margin-left: 400px;
+    top:80px;
+    z-index: 4;
+
+}
+
+.name {
+    position: absolute;
+    font-family: serif;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 32px;
+    margin-left: 400px;
+    top:180px;
+    z-index: 3;
+
+}
+
+
+
+
+
+.css-slider {
+  position: relative;
+ width: 500px;
+  height: 340px;
+  overflow: hidden;
+   border-radius: 64px 64px 64px 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 40px;
+  box-sizing: border-box;
+  text-align: left;
+  background: #33333300;
+  color: rgb(255, 255, 255);
+  border-radius: 64px 64px 64px 64px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+#slide-1:checked ~ .slide-one,
+#slide-2:checked ~ .slide-two,
+#slide-3:checked ~ .slide-three,
+#slide-4:checked ~ .slide-four {
+  opacity: 1;
+  z-index: 100;
+}
+
+/* Navigation dots */
+header {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  z-index: 1000;
+}
+
+header label {
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+header label:hover {
+  background-color: #fff;
+}
+
+/* Prev/Next Arrows */
+nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5px;
+}
+
+nav label {
+  font-size: 2rem;
+  color: rgba(26, 26, 26, 0.998);
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0);
+  padding: 10px;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+nav label:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* H1 slide heading animation */
+.slide h1 {
+  font-size: 21px;
+  margin: 0;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.5s ease;
+}
+
+#slide-1:checked ~ .slide-one h1,
+#slide-2:checked ~ .slide-two h1,
+#slide-3:checked ~ .slide-three h1,
+#slide-4:checked ~ .slide-four h1 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+.availability {
+  background-color: #252525; /* Green for available */
+  color: rgb(139, 139, 139);
+  padding: 12px 20px;
+  font-size: 11px;
+  text-align: center;
+  border-radius: 10px;
+  margin: 20px auto;
+  width: fit-content;
+ 
+  margin-top: -60px;
+  margin-left: 300px;
+}
+
+
+.green-circle {
+  width: 11px;
+  height: 11px;
+  background-color: green;
+  border-radius: 50%;
+  position: relative;
+  margin-top: -45px;
+  margin-left: 305px;
+}
+
+
+
+.hire-me {
+  position: relative;
+  margin-top: 320px;
+  margin-left: 105px;
+  z-index: 999;
+
+  width: 120px;
+  height: 40px;
+  
+  border-radius: 22px;
+  border-color: #fff;
+
+}
+
+
+
+.hire-me:hover{
+box-shadow: inset 2px 2px 5px rgba(132, 132, 132, 0.1),
+              inset -2px -2px 5px rgba(116, 116, 116, 0.7);
+  
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+
+}
+
+
+
+
+.works {
+  position: relative;
+  margin-top: 320px;
+  margin-left: 85px;
+  z-index: 999;
+
+  width: 120px;
+  height: 40px;
+  
+  border-radius: 22px;
+  border-color: #fff;
+
+}
+
+
+
+.works:hover{
+box-shadow: inset 2px 2px 5px rgba(132, 132, 132, 0.1),
+              inset -2px -2px 5px rgba(116, 116, 116, 0.7);
+  
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+
+}
+
+.icon{
+  color: #212121;
+  font-size: 30px;
+}
+
+.icon2{
+  color: #ffffff;
+  font-size: 30px;
+}

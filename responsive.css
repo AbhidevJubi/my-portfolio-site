@@ -1,0 +1,298 @@
+@media (max-width: 768px) {
+
+  .logo {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 2rem;
+  font-weight: 900;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.hero-section {
+  height: 100vh;
+  width: 100%;
+}
+
+.side-nav {
+  position: fixed;
+  margin-top: 170px;
+  width: 130px;
+  left: 20px;
+  top: 220px;
+  background-color: #ffffff00; /* Dark background for contrast */
+  border-radius: 15px;
+  color: #111;
+  z-index: 0;
+
+  opacity: 0;
+}
+
+
+#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 90px;
+ backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px); /* Safari support */
+  background: rgba(255, 255, 255, 0.1); /* light transparent */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* subtle border */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  color: white;
+  z-index: 999;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.menu-icon {
+  margin-left: 290px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+
+.folder {
+  width: 100%;
+  height: 120vh;
+  position: absolute;
+  margin: 0;
+   /* transform: scale(0.6, 0.6);
+   left: 100px; */
+}
+
+.body{
+  position: absolute;
+  margin: 0;
+  left: -170px;
+  
+
+
+}
+
+.bg{
+  position: absolute;
+  transform: scale(1.15, 1.15);
+  margin: 0;
+
+}
+
+.hey{
+  width: 40%; 
+  margin: 0;
+  left: -380px;
+  margin-top: 10px;
+  z-index: 3;
+  
+}
+
+.hey-text{
+  font-size: 24px;
+}
+
+.name{
+  width: 80%;
+ left: -380px;
+  margin-top: -20px;
+}
+
+.name-text{
+  font-size: 32px;
+}
+
+
+.about-section {
+  padding: 0px 0px;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  height: auto;
+  font-size: 21px;
+  margin: 0;
+  margin-bottom: 50px;
+}
+
+
+.aboutme {
+  
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
+  font-size: 16px;
+  word-spacing: 5px;
+  margin: 0;
+  margin-left: 20px;
+  margin-bottom: 50px;
+
+}
+
+
+.css-slider h1{
+  position: absolute;
+  width: 260px;
+  height: 300px;
+  margin: 0;
+
+  left: 190px;
+  top: 110px;
+  text-align: left;
+  font-size: 5px;
+  font-weight: 5;
+
+
+}
+
+.slide h1{
+  font-size: 12px;
+
+}
+
+.hire-me{
+  position: absolute;
+  left: 150px;
+}
+
+
+.works{
+  position: absolute;
+  left: 90px;
+}
+
+.reveal {
+  margin: 0;
+}
+
+
+
+
+.portfolio-filters{
+ padding: 0px 0px 0px 0px;
+margin: 0;
+height: auto;
+align-items: start;
+margin-left: -270px;
+bottom: -50px;
+}
+
+
+ .my-portfolio {
+  position: absolute;
+  margin: 0;
+  margin-top: -99px;
+  left: -130px;
+ }
+
+.portfolio-grid {
+    padding: 0px 0px 0px 0px;
+    gap: 20px;
+    grid-template-columns: 1fr;
+    margin-left: -120px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+
+
+  .portfolio-item{
+  position:relative;
+  margin: 0;
+  margin-left: 10px;
+  overflow:hidden;
+  border-radius:12px;
+  box-shadow:0 8px 20px rgba(0,0,0,.4);
+  transition:transform .3s ease;
+}
+
+
+
+.services-section {
+  padding: 100px 50px;
+  background: #fffA;
+  text-align: center;
+}
+
+.services-grid {
+  margin: 0;
+
+  padding: 40px 20px 60px 20px;
+    gap: 20px;
+    grid-template-columns: 1fr;
+}
+
+
+
+.contact-container {
+  flex-direction: column;
+  margin: 0;
+  margin-top:40px;
+  margin-left: -20px;
+}
+
+
+
+.social-icons a {
+   display: inline-block;
+  font-size: 0.2rem;
+  margin-right: 5px;
+}
+.social-icons2{
+  padding: 20px;
+}
+
+
+/* .nav-links { display: flex !important; } */
+  /* .menu-icon { display: none !important; } */
+
+
+
+.nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 290px;      /* just under header */
+    right: 0;
+    background: #222;
+    width: 100%;     /* adjust to taste */
+    padding: 10px 0;
+    z-index: 1000;
+  }
+  .nav-links.show {
+    display: flex;
+  }
+
+  /* add spacing between links */
+  .nav-links a {
+    padding: 12px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    gap: 0; /* reset any flex gap */
+  }
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
+
+.menu-icon2 {
+  display: block;
+position: absolute;
+left: 320px;
+top: -33px;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.social-icons{
+  display: none;
+
+}
+
+
+#backToTop {
+  width: 50px;
+  height: 50px;
+}
+
+}

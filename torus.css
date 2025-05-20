@@ -1,0 +1,9 @@
+.donut {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, #000 20%, transparent 21%),
+              radial-gradient(circle at center, transparent 60%, #0ff 61%);
+  background-size: cover;
+  box-shadow: 0 0 20px #0ff;
+}
