@@ -387,12 +387,6 @@ backToTop.addEventListener("click", () => {
 
 
 
-
-
-
-
-import emailjs from 'https://cdn.emailjs.com/dist/email.min.js';
-
 window.addEventListener('DOMContentLoaded', () => {
   emailjs.init("ZELsn1nASVKwOU-cx");
 
