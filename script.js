@@ -381,3 +381,35 @@ window.addEventListener("scroll", () => {
 backToTop.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
+
+
+
+
+
+
+
+
+
+  (function () {
+    emailjs.init("ZELsn1nASVKwOU-cx"); // replace with your actual public key
+  })();
+
+  document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Set the time field value
+    this.time.value = new Date().toLocaleString();
+
+    // Send the form
+    emailjs.sendForm("service_mabgzeu", "template_bl3z7zo", this).then(
+      function () {
+        alert("Message sent successfully!");
+        document.getElementById("contact-form").reset();
+      },
+      function (error) {
+        alert("Failed to send message. Please try again.");
+        console.error("EmailJS Error:", error);
+      }
+    );
+  });
+
